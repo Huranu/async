@@ -1,104 +1,69 @@
+'use client';
+import ChartCard from "./_components/chart-card";
+import { Button } from "@/components/ui/button";
+import QuizList from "./_components/quiz-list";
+import FeatButton from "./_components/feat-button";
+import Exam from "./_assets/exam-time.png"
+import Chill from "./_assets/chill-out.png"
 
-import Image from "next/image";
+const memoryData = [
+  { name: "Mon", value: 35 },
+  { name: "Tue", value: 45 },
+  { name: "Wed", value: 20 },
+  { name: "Thu", value: 30 },
+  { name: "Fri", value: 40 },
+  { name: "Sat", value: 30 },
+  { name: "Sun", value: 40 },
+];
+const stressData = [
+  { name: "Mon", value: 40 },
+  { name: "Tue", value: 20 },
+  { name: "Wed", value: 25 },
+  { name: "Thu", value: 61 },
+  { name: "Fri", value: 53 },
+  { name: "Sat", value: 30 },
+  { name: "Sun", value: 40 },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 text-gray-800">
+      <header className="flex items-center justify-between px-6 py-4">
+        <h1 className="text-xl font-bold text-blue-950">mindbooster</h1>
+        <nav className="hidden md:flex gap-6 text-sm text-gray-700">
+          <a href="#">Хэрхэн ажилладаг вэ</a>
+          <a href="#">Бидний тухай</a>
+          <a href="#">Нөөц</a>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="px-6 py-10">
+        <div className="flex flex-row justify-center gap-5">
+          <div className="grid grid-cols-2 gap-4">
+            <ChartCard name="Таны ой тогтоолтын оноо" data={memoryData} bg="from-pink-100 to-sky-200" color="#FF6DC6" />
+            <ChartCard name="Таны стрессийн түвшин" data={stressData} bg="from-cyan-100 to-pink-200" color="#D48E43" />
+            <FeatButton title="Мэдлэгээ бататгая" desc="Тухайн агуулгыг оруулан шалгалт өгөөрэй." url="reset" icon={Exam} />
+            <FeatButton title="Стрессээс ангижир" desc="Таны стрессийг тайлах орчин." url="quiz" icon={Chill} />
+          </div>
+          <div className="border-l-2 pl-5 border-gray-200">
+            <QuizList />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <style jsx>{`
+        @keyframes shake {
+          0% { transform: translateX(0); }
+          25% { transform: translateX(-10px); }
+          50% { transform: translateX(10px); }
+          75% { transform: translateX(-10px); }
+          100% { transform: translateX(10px); }
+        }
+
+        .hover\:animate-shake:hover {
+          animation: shake 0.5s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
