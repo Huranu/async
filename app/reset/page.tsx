@@ -165,25 +165,77 @@ export default function ResetStressPage() {
           </div>
         )
       },
-    {
-      title: "Хөгжим сонсох",
-      desc: "Өдөр бүр жижиг сайн зүйлсэд талархах дадал хэвшүүл.",
-      bg: "from-yellow-100 to-orange-100",
-      label: "Талархал",
-      emoji: "🙏",
-      content: (
-        <div className="space-y-4">
-          <h4 className="font-semibold text-lg">Өнөөдрийн талархал:</h4>
-          <textarea 
-            className="w-full h-32 p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-200"
-            placeholder="Өнөөдөр би юунд талархлаа илэрхийлэх вэ?..."
-          />
-          <button className="bg-orange-100 hover:bg-orange-200 px-4 py-2 rounded-lg transition-colors">
-            Хадгалах
-          </button>
-        </div>
-      )
-    },
+      {
+        title: "Хөгжим сонсох",
+        desc: "Тайвшруулагч хөгжим, байгалийн дууны сангаас сонголт хийж, тайвнаж амраарай",
+        bg: "from-amber-100 to-orange-100",
+        label: "Амралт ба хөгжим",
+        emoji: "🎵",
+        content: (
+          <div className="space-y-6">
+            {/* Music Player Section */}
+            <div className="bg-white rounded-xl p-4 shadow-sm border">
+              <h4 className="font-semibold text-lg text-orange-800 mb-4">Тунгалаг хөгжим:</h4>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  {
+                    title: "Байгалийн дуу шивнээ",
+                    duration: "1 цаг",
+                    image: "https://i.ytimg.com/vi/3F9EJQyJTGE/maxresdefault.jpg",
+                    youtubeId: "vNfs7VU_hrQ"
+                  },
+                  {
+                    title: "Тибетын хонхны дуу",
+                    duration: "45 мин",
+                    image: "https://i.ytimg.com/vi/6D0nmPo2Vt0/maxresdefault.jpg",
+                    youtubeId: "vNfs7VU_hrQ"
+                  },
+                  {
+                    title: "Яруу найраглал",
+                    duration: "30 мин",
+                    image: "https://i.ytimg.com/vi/MR57rug8NsM/maxresdefault.jpg",
+                    youtubeId: "vNfs7VU_hrQ"
+                  },
+                  {
+                    title: "Цэвэр агаар мэт",
+                    duration: "1 цаг",
+                    image: "https://i.ytimg.com/vi/pLgJ7pk0X-s/maxresdefault.jpg",
+                    youtubeId: "vNfs7VU_hrQ"
+                  }
+                ].map((music, index) => (
+                  <div 
+                    key={index}
+                    className="group relative cursor-pointer rounded-lg overflow-hidden"
+                    onClick={() => window.open(`https://www.youtube.com/watch?v=${music.youtubeId}`, '_blank')}
+                  >
+                    <img
+                      src={music.image}
+                      alt={music.title}
+                      className="w-full h-32 object-cover transition-opacity group-hover:opacity-90"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+                      <div className="text-white">
+                        <h5 className="font-medium">{music.title}</h5>
+                        <p className="text-sm opacity-80">{music.duration}</p>
+                      </div>
+                    </div>
+                    <div className="absolute top-2 right-2 bg-white/90 px-2 py-1 rounded-full text-xs">
+                      ▶️ Тоглох
+                    </div>
+                  </div>
+                ))}
+              </div>
+      
+              <div className="mt-4 text-center text-sm text-orange-600">
+                🎧 Чихэвч зүүж, амралтаа эхлүүлээрэй
+              </div>
+            </div>
+
+    
+          </div>
+        )
+      },
   ];
 
   const handleCardClick = (index: number) => {
