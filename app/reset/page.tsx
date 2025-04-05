@@ -21,25 +21,25 @@ export default function ResetStressPage() {
                       title: "Амьсгалын бясалгал",
                       duration: "10 минут",
                       image: "https://picsum.photos/300/200?random=1",
-                      link: "https://youtu.be/example1"
+                      link: "https://www.youtube.com/watch?v=enJyOTvEn4M"
                     },
                     {
                       title: "Биеийн танин мэдэхүйн бясалгал",
                       duration: "15 минут",
                       image: "https://picsum.photos/300/200?random=2",
-                      link: "https://youtu.be/example2"
+                      link: "https://www.youtube.com/watch?v=HMOfD3VSbQ4"
                     },
                     {
-                      title: "Унтрах бясалгал",
+                      title: "Амрах бясалгал",
                       duration: "20 минут",
                       image: "https://picsum.photos/300/200?random=3",
-                      link: "https://youtu.be/example3"
+                      link: "https://www.youtube.com/watch?v=NP310Q7ClBU"
                     },
                     {
                       title: "Яаралтай тусламжийн 7 арга",
                       duration: "12 минут",
                       image: "https://picsum.photos/300/200?random=4",
-                      link: "https://youtu.be/example4"
+                      link: "https://www.youtube.com/watch?v=whrN7ujh3Yk4"
                     }
                   ].map((item, index) => (
                     <div 
@@ -148,7 +148,6 @@ export default function ResetStressPage() {
               ))}
             </div>
       
-            {/* Additional Content */}
             <div className="mt-6 p-4 bg-blue-50 rounded-xl">
               <div className="flex items-center space-x-4">
                 <div className="bg-blue-100 p-3 rounded-lg">
@@ -173,7 +172,6 @@ export default function ResetStressPage() {
         emoji: "🎵",
         content: (
           <div className="space-y-6">
-            {/* Music Player Section */}
             <div className="bg-white rounded-xl p-4 shadow-sm border">
               <h4 className="font-semibold text-lg text-orange-800 mb-4">Тунгалаг хөгжим:</h4>
               
@@ -182,25 +180,25 @@ export default function ResetStressPage() {
                   {
                     title: "Байгалийн дуу шивнээ",
                     duration: "1 цаг",
-                    image: "https://i.ytimg.com/vi/3F9EJQyJTGE/maxresdefault.jpg",
+                    image: "https://i.pinimg.com/474x/a3/bd/99/a3bd99ff636a9cd1c51b07c65f1aae60.jpg",
                     youtubeId: "vNfs7VU_hrQ"
                   },
                   {
                     title: "Тибетын хонхны дуу",
                     duration: "45 мин",
-                    image: "https://i.ytimg.com/vi/6D0nmPo2Vt0/maxresdefault.jpg",
+                    image: "https://i.pinimg.com/474x/9e/1b/56/9e1b567a5445db392298cd5affa4239e.jpg",
                     youtubeId: "vNfs7VU_hrQ"
                   },
                   {
                     title: "Яруу найраглал",
                     duration: "30 мин",
-                    image: "https://i.ytimg.com/vi/MR57rug8NsM/maxresdefault.jpg",
+                    image: "https://i.pinimg.com/736x/51/fa/0a/51fa0a437b9a657020dc65781c4f0789.jpg",
                     youtubeId: "vNfs7VU_hrQ"
                   },
                   {
                     title: "Цэвэр агаар мэт",
                     duration: "1 цаг",
-                    image: "https://i.ytimg.com/vi/pLgJ7pk0X-s/maxresdefault.jpg",
+                    image: "https://i.pinimg.com/474x/ff/01/ed/ff01ed9b21fdae1cad196904b587ecd7.jpg",
                     youtubeId: "vNfs7VU_hrQ"
                   }
                 ].map((music, index) => (
